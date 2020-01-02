@@ -12,6 +12,10 @@ gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 gem 'bootstrap-sass', '~> 3.4.1'
+# Rack
+gem "rack", ">= 2.0.8"
+# excon
+gem "excon", ">= 0.71.0"
 #for authenication
 gem 'devise'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -27,8 +31,8 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'carrierwave', '~> 2.0'
-gem 'fog', '~> 2.2'
+gem 'carrierwave-aws'
+gem 'fog-aws'
 
 # image resizing
 gem 'mini_magick'

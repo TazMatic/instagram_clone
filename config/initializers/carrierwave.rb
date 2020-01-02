@@ -1,12 +1,12 @@
 CarrierWave.configure do |config|
-  config.fog_credentials = {
-    provider:               'AWS',
-    aws_access_key_id:      ENV['AWS_ACCESS_KEY_ID'],
-    aws_secret_access_key:  ENV['AWS_SECRET_ACCESS_KEY'],
+  config.aws_credentials = {
+    region:             'us-east-1',
+    access_key_id:      ENV['AWS_ACCESS_KEY_ID'],
+    secret_access_key:  ENV['AWS_SECRET_ACCESS_KEY'],
   }
-  config.storage = :fog
-  config.permissions = 0666
-  config.cache_dir = "#{Rails.root}/tmp/"
-  config.fog_directory = ENV['FOG_DIRECTORY']
-  config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }
+  config.storage = :aws
+  #config.permissions = 0666
+  #config.cache_dir = "#{Rails.root}/tmp/"
+  config.aws_bucket = ENV['AWS_BUCKET']
+  config.aws_acl  = 'private'
 end
